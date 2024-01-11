@@ -1,0 +1,46 @@
+@import 'color-wlogout.css';
+
+window {
+	background-color: rgba(12, 12, 12, 0.4);
+    background-image: none;
+    font-family: Iosevka Nerd Font;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    border: none;
+    color: @color6;
+    text-shadow: none;
+    background-color: rgba(12, 12, 12, 0.8);
+    margin: 5px;
+    transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: @color2;
+    color: @color15;
+}
+
+button:focus {
+    border: 2px solid @color3;
+}
+
+#logout {
+    background-image: image(url("/home/gxro/.config/wlogout/Icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/home/gxro/.config/wlogout/Icons/suspend.png"));
+}
+
+#shutdown {
+    background-image: image(url("/home/gxro/.config/wlogout/Icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/home/gxro/.config/wlogout/Icons/reboot.png"));
+}

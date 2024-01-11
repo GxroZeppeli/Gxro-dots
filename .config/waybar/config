@@ -1,0 +1,139 @@
+{
+    "layer": "top",
+    "gtk-layer-shell": true,
+    "modules-left": [
+        "cpu", 
+        "memory", 
+        "custom/gpu",
+        "clock", 
+        "hyprland/workspaces"
+    ],
+    "modules-center": ["wlr/taskbar"],
+    "modules-right": [
+        "hyprland/window",
+        "bluetooth",
+        "network",
+        "pulseaudio",
+        "custom/wallpaper",
+        "hyprland/language",
+        "custom/power-menu"
+    ],
+    "hyprland/workspaces": {
+        "all-outputs": true,
+        "active-only": false,
+        "on-click": "activate",
+        "format": "{icon}",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "format-icons": {
+            "active": "󰮯",
+            "default": "󰊠"
+        },
+        "persistent-workspaces": {
+            "*": 7
+        }
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 40,
+        "seperate-outputs": true
+    },
+    "clock": {
+        "interval": 60,
+        "align": 0,
+        "rotate": 0,
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%d %b, %I:%M %p}",
+        "format-alt": "{:%a %b %d, %G}"
+    },
+    "bluetooth": {
+        "format": " ",
+        //"format": "",
+        //"format-disabled": "", // an empty format will hide the module
+        "format-connected": "{num_connections} ",
+        "tooltip-format": "{device_alias}",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": " {device_alias}",
+        "on-click": "blueman-manager"
+    },
+    "cpu": {
+        "interval": 10,
+        "format": "  {usage}%",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 30,
+        "format": "  {}%",
+        "format-alt": " {used:0.1f}GB",
+        "max-length": 10
+    },
+    "network": {
+        "format-wifi": "{essid} 󰤨",
+        "format-ethernet": "Wired 󱘖",
+        "tooltip-format": "󱘖 {ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "format-linked": "󱘖 {ifname} (No IP)",
+        "format-disconnected": "Disconnected ",
+        "format-alt": "{signalStrength}% 󰤨",
+        "interval": 5,
+        "on-click-right": "nm-connection-editor"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol &",
+        "on-click-right": "pamixer -t"
+    },
+    "custom/power-menu": {
+        "format": "⏻",
+        "on-click": "wlogout -b 4",
+        "tooltip": false
+    },
+    "custom/wallpaper": {
+        "format": "",
+        "on-click": "wallswitcher.py",
+        "tooltip": false
+    },
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "EN",
+        "format-lt": "RU",
+        "tooltip": false
+    },
+/*     "custom/updates":{
+        "format": "{} Update(s)",
+        "exec": "checkupdates | wc -l",
+        "interval": 30,
+        "on-click": "kitty -e paru -Syu && notify-send 'The system has been updated' ",
+        "tooltip": false
+    }, */
+    "custom/gpu":{
+        "format": "{}",
+        "exec": "nvidia-settings -q gpucoretemp -t",
+        "interval": 2,
+        "tooltip": false
+    },
+	"wlr/taskbar": {
+		"format": "{icon}",
+		"icon-size": 18,
+		"icon-theme": "Dracula",
+        "spacing": 0,
+		"tooltip-format": "{title}",
+		"on-click": "activate",
+		"on-click-middle": "close",
+		"ignore-list": [
+
+		],
+		"app_ids-mapping": {
+
+		}
+	}
+}

@@ -46,27 +46,27 @@ paru -S hyprland wlogout kitty xdg-desktop-portal-hyprland xdg-user-dirs qt5-way
 
 Screenshots
 ```shell
-slurp grim swappy wl-clipboard
+paru -S slurp grim swappy wl-clipboard
 ```
 
 Audio
 ```shell
-pipewire pipewire-audio pipewire-jack pipewire-pulse pipewire-alsa pavucontrol pamixer
+paru -S pipewire pipewire-audio pipewire-jack pipewire-pulse pipewire-alsa pavucontrol pamixer
 ```
 
 Thunar
 ```shell
-thunar thunar-volman thunar-archive-plugin gvfs tumbler
+paru -S thunar thunar-volman thunar-archive-plugin gvfs tumbler
 ```
 
 Fonts
 ```shell
-ttf-iosevka-nerd noto-fonts-emoji noto-fontsd-cjk otf-font-awesome
+paru -S ttf-iosevka-nerd noto-fonts-emoji noto-fontsd-cjk otf-font-awesome
 ```
 
 Firefox
 ```shell
-firefox python-pywalfox
+paru -S firefox python-pywalfox
 ```
 
 After package installation move repo's `.config` to `~/` and make scripts from repo's `bin` folder executable from everywhere.
